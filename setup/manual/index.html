@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="zensical-0.0.53">
+      <meta name="generator" content="zensical-0.0.57">
     
     
       
@@ -36,12 +36,12 @@
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.39e53929.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.38807bfb.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.c7ab7c71.min.css">
       
       
 
@@ -4285,11 +4285,11 @@
 <li><a href="https://virtualenv.pypa.io/en/20.26.4/user_guide.html#activators">Activate the virtualenv</a> (OS-dependent). This must be done for every new terminal before you start.</li>
 </ul>
 <p>If using virtual environments when running the built Agent, you may need to override the built Agent's search path for Python check packages using the <code>PYTHONPATH</code> variable (your target path must have the <a href="https://datadoghq.dev/integrations-core/setup/">pre-requisite core integration packages installed</a> though).</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;./venv/lib/python3.12/site-packages:</span><span class="nv">$PYTHONPATH</span><span class="s2">&quot;</span><span class="w"> </span>./agent<span class="w"> </span>run<span class="w"> </span>...
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">"./venv/lib/python3.12/site-packages:</span><span class="nv">$PYTHONPATH</span><span class="s2">"</span><span class="w"> </span>./agent<span class="w"> </span>run<span class="w"> </span>...
 </span></code></pre></div>
 <p>See also some notes in <a href="https://github.com/DataDog/datadog-agent/tree/main/docs/dev/checks"><code>docs/dev/checks</code></a> about running custom python checks.</p>
 <h2 id="golang">Golang<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h2>
-<p>You must <a href="https://golang.org/doc/install">install Golang</a> version <code>1.26.5</code> or later. Make sure that <code>$GOPATH/bin</code> is in your <code>$PATH</code>, otherwise <a href="../required/#tooling">tooling</a> cannot use any additional tool it might need.</p>
+<p>You must <a href="https://golang.org/doc/install">install Golang</a> version <code>1.26.6</code> or later. Make sure that <code>$GOPATH/bin</code> is in your <code>$PATH</code>, otherwise <a href="../required/#tooling">tooling</a> cannot use any additional tool it might need.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Versions of Golang that aren't an exact match to the version specified in our build images (see e.g. <a href="https://github.com/DataDog/datadog-agent-buildimages/blob/c025473ee467ee6d884d532e4c12c7d982ce8fe1/circleci/Dockerfile#L43">here</a>) may not be able to build the agent and/or the <a href="https://github.com/DataDog/datadog-agent/tree/main/rtloader">rtloader</a> binary properly.</p>
@@ -4502,7 +4502,7 @@
       <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.action.edit","content.code.copy","content.tabs.link","content.tooltips","navigation.expand","navigation.footer","navigation.indexes","navigation.instant","navigation.sections","navigation.tabs","navigation.tabs.sticky"],"search":"../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.69c251d7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.49251538.min.js"></script>
       
     
   </body>
