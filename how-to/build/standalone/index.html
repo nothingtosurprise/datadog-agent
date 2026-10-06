@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="zensical-0.0.66">
+      <meta name="generator" content="zensical-0.0.68">
     
     
       
@@ -36,12 +36,12 @@
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/classic/main.5da0f285.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/classic/main.3d7537f3.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/classic/palette.c7ab7c71.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/classic/palette.031959be.min.css">
       
       
 
@@ -85,14 +85,11 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#how-to-build-standalone-agent-binaries" class="md-skip">
-          Skip to content
-        </a>
-      
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
       
@@ -4152,10 +4149,12 @@
             <div class="md-content" data-md-component="content">
               
               <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
                 
   
   
                   
+
   
     <a href="https://github.com/DataDog/datadog-agent/blob/main/doc/how-to/build/standalone.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
@@ -4200,22 +4199,22 @@
 </div>
 <details class="tip">
 <summary>Determining the default set of features</summary>
-<p>The default set of features is determined by <a href="https://github.com/DataDog/datadog-agent/blob/main/tasks/build_tags.py#L232">the <code>get_default_build_tags</code> method</a>.</p>
+<p>The default set of features is determined by <a href="https://github.com/DataDog/datadog-agent/blob/main/tasks/build_tags.py#L239">the <code>get_default_build_tags</code> method</a>.</p>
 <p>There is a command you can use to print out the default build tags for your build context:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dda<span class="w"> </span>inv<span class="w"> </span>print-default-build-tags
 </span></code></pre></div></p>
 <p>You can give more info about your build context using the <code>-b</code>, <code>-f</code> and <code>-p</code> flags:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dda<span class="w"> </span>inv<span class="w"> </span>print-default-build-tags<span class="w"> </span>-b<span class="w"> </span>otel-agent<span class="w"> </span>-p<span class="w"> </span>windows
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&gt;<span class="w"> </span>otlp,zlib,zstd
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&gt;<span class="w"> </span>otlp,zlib
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>dda<span class="w"> </span>inv<span class="w"> </span>print-default-build-tags<span class="w"> </span>-f<span class="w"> </span>fips
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&gt;<span class="w"> </span>bundle_installer,consul,datadog.no_waf,ec2,etcd,fargateprocess,goexperiment.systemcrypto,grpcnotrace,jmx,kubeapiserver,kubelet,ncm,oracle,orchestrator,otlp,python,requirefips,trivy_no_javadb,zk,zlib,zstd
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&gt;<span class="w"> </span>bundle_installer,consul,datadog.no_waf,ec2,etcd,fargateprocess,goexperiment.systemcrypto,grpcnotrace,jmx,kubeapiserver,kubelet,ncm,oracle,orchestrator,otlp,python,requirefips,trivy_no_javadb,zk,zlib
 </span></code></pre></div>
 Run <code>dda inv print-default-build-tags --help</code> for more details.</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>To include the <code>zstd</code>, <code>etcd</code> and <code>python</code> features:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dda<span class="w"> </span>inv<span class="w"> </span>&lt;target&gt;.build<span class="w"> </span>--build-include<span class="o">=</span>zstd,etcd,python
+<p>To include the <code>zlib</code>, <code>etcd</code> and <code>python</code> features:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dda<span class="w"> </span>inv<span class="w"> </span>&lt;target&gt;.build<span class="w"> </span>--build-include<span class="o">=</span>zlib,etcd,python
 </span></code></pre></div></p>
 <p>To exclude some features that would otherwise be enabled:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dda<span class="w"> </span>inv<span class="w"> </span>&lt;target&gt;.build<span class="w"> </span>--build-exclude<span class="o">=</span>systemd,python
@@ -4368,7 +4367,7 @@ Run <code>dda inv print-default-build-tags --help</code> for more details.</p>
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
@@ -4380,10 +4379,10 @@ Run <code>dda inv print-default-build-tags --help</code> for more details.</p>
       
         
         
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["content.action.edit","content.code.copy","content.tabs.link","content.tooltips","navigation.expand","navigation.footer","navigation.indexes","navigation.instant","navigation.sections","navigation.tabs","navigation.tabs.sticky"],"redirect":null,"search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["content.action.edit","content.code.copy","content.tabs.link","content.tooltips","navigation.expand","navigation.footer","navigation.indexes","navigation.instant","navigation.sections","navigation.tabs","navigation.tabs.sticky"],"redirect":null,"search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b7d3f789.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.3c842f4c.min.js"></script>
       
         <script src="../../../assets/javascripts/navigation-roots.js"></script>
       
